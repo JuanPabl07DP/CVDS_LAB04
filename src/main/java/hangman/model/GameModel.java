@@ -1,15 +1,15 @@
 /***************************************************************
-* file: GameModel.java
-* author:   Christopher Santos
-*           Omar Rodriguez
-* class: CS 245 - Programming Graphical User Interfaces
-*
-* assignment: Swing Project v1.0
-* date last modified: 10/11/2016
-*
-* purpose: This is the model component for the game screen
-*
-****************************************************************/ 
+ * file: GameModel.java
+ * author:   Christopher Santos
+ *           Omar Rodriguez
+ * class: CS 245 - Programming Graphical User Interfaces
+ *
+ * assignment: Swing Project v1.0
+ * date last modified: 10/11/2016
+ *
+ * purpose: This is the model component for the game screen
+ *
+ ****************************************************************/
 package hangman.model;
 
 import hangman.model.dictionary.HangmanDictionary;
@@ -24,16 +24,16 @@ public class GameModel {
     private LocalDateTime dateTime;
     private int gameScore;
     private int[] lettersUsed;
-    
-    
+
+
     private HangmanDictionary dictionary;
-    
+
     private Scanner scan;
     private String randomWord;
     private char[] randomWordCharArray;
-    
-    
-   
+
+
+
     public GameModel(HangmanDictionary dictionary){
         //this.dictionary = new EnglishDictionaryDataSource();
         this.dictionary=dictionary;
@@ -42,9 +42,9 @@ public class GameModel {
         incorrectCount = 0;
         correctCount = 0;
         gameScore = 100;
-        
+
     }
-    
+
     //method: reset
     //purpose: reset this game model for a new game
     public void reset(){
@@ -60,7 +60,7 @@ public class GameModel {
     public void setDateTime() {
         this.dateTime = LocalDateTime.now();
     }
-    
+
     //method: makeGuess
     //purpose: check if user guess is in string. Return a
     // list of positions if character is found in string
@@ -79,9 +79,9 @@ public class GameModel {
             correctCount += positions.size();
         }
         return positions;
-        
+
     }
-    
+
     //getDateTime
     //purpose: returns current displayed date/time
     public String getDateTime() {
@@ -94,7 +94,7 @@ public class GameModel {
     public void setScore(int score) {
         this.gameScore = score;
     }
-    
+
     //getScore
     //purpose: returns current score value
     public int getScore() {
@@ -132,7 +132,7 @@ public class GameModel {
     public void setGameScore(int gameScore) {
         this.gameScore = gameScore;
     }
-    
+
     //method: getWordLength
     //purpose: return length of current word
     public int getWordLength(){
