@@ -1,14 +1,14 @@
 /***************************************************************
-* file: HangmanPanel.java
-*           Omar Rodriguez
-* class: CS 245 - Programming Graphical User Interfaces
-*
-* assignment: Swing Project v1.0
-* date last modified: 10/11/2016
-*
-* purpose: This is the view component for displaying a hangman game
-*
-****************************************************************/ 
+ * file: HangmanPanel.java
+ *           Omar Rodriguez
+ * class: CS 245 - Programming Graphical User Interfaces
+ *
+ * assignment: Swing Project v1.0
+ * date last modified: 10/11/2016
+ *
+ * purpose: This is the view component for displaying a hangman game
+ *
+ ****************************************************************/
 package hangman.view;
 
 import java.awt.BasicStroke;
@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 
 public class HangmanStickmanPanel extends HangmanPanel {
     int incorrectCount;
-    
+
     public HangmanStickmanPanel(){
         incorrectCount = 0;
     }
@@ -34,7 +34,7 @@ public class HangmanStickmanPanel extends HangmanPanel {
     public void setIncorrectGuesses(int incorrectGuesses) {
         this.incorrectCount = incorrectGuesses;
     }
-    
+
     //method: paint
     //purpose: paint the panel with the features of a hangman game, depending on 
     // how many incorrect guesses by the player
@@ -44,13 +44,13 @@ public class HangmanStickmanPanel extends HangmanPanel {
         ((Graphics2D)g).setStroke(new BasicStroke(5));
         int panelWidth = this.getWidth();
         int panelHeight = this.getHeight();
-        
+
         g.drawLine(10, panelHeight - 10, (panelWidth / 4) + 10, panelHeight - 10);
         g.drawLine(((panelWidth/4)/2) + 10, panelHeight - 10,((panelWidth/4)/2) + 10, 10);
         g.drawLine(((panelWidth/4)/2) + 10, 10, (panelWidth / 4) + 10, 10);
         g.drawLine((panelWidth / 4) + 10, 10, (panelWidth / 4) + 10, panelHeight / 6);
-        
-        
+
+
         if(incorrectCount > 0){
             g.drawOval((panelWidth/4)+ 10 - (panelHeight / 12),(panelHeight/6),panelHeight/6,panelHeight/6); // Head
         }
@@ -73,6 +73,6 @@ public class HangmanStickmanPanel extends HangmanPanel {
             g.drawLine((panelWidth / 4) + 10,(panelHeight/6)*3,((panelWidth / 4) + 10) + (panelHeight/6),
                     (((panelHeight/6)*3) + (panelHeight/18))+(panelHeight/12)); // Left Leg        
         }
-        
+
     }
 }

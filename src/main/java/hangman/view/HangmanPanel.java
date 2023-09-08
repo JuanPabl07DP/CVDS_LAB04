@@ -15,10 +15,10 @@ import javax.swing.JPanel;
 public abstract class HangmanPanel extends JPanel{
      @Override
      public void paint(Graphics g){
-         super.paint(g);
+          super.paint(g);
      };
-     
-     
+
+
      public abstract void incrementIncorrectGuesses();
      public abstract void setIncorrectGuesses(int incorrectGuesses);
 }

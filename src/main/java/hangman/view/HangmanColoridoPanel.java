@@ -1,14 +1,14 @@
 /***************************************************************
-* file: HangmanPanel.java
-*           Omar Rodriguez
-* class: CS 245 - Programming Graphical User Interfaces
-*
-* assignment: Swing Project v1.0
-* date last modified: 10/11/2016
-*
-* purpose: This is the view component for displaying a hangman game
-*
-****************************************************************/ 
+ * file: HangmanPanel.java
+ *           Omar Rodriguez
+ * class: CS 245 - Programming Graphical User Interfaces
+ *
+ * assignment: Swing Project v1.0
+ * date last modified: 10/11/2016
+ *
+ * purpose: This is the view component for displaying a hangman game
+ *
+ ****************************************************************/
 package hangman.view;
 
 import java.awt.BasicStroke;
@@ -19,9 +19,9 @@ import javax.swing.JPanel;
 
 
 public class HangmanColoridoPanel extends HangmanPanel {
-    
+
     int incorrectCount;
-    
+
     public HangmanColoridoPanel(){
         incorrectCount = 0;
     }
@@ -37,7 +37,7 @@ public class HangmanColoridoPanel extends HangmanPanel {
     public void setIncorrectGuesses(int incorrectGuesses) {
         this.incorrectCount = incorrectGuesses;
     }
-    
+
     //method: paint
     //purpose: paint the panel with the features of a hangman game, depending on 
     // how many incorrect guesses by the player
@@ -58,15 +58,15 @@ public class HangmanColoridoPanel extends HangmanPanel {
         if (incorrectCount > 0) {
             g.fillOval((panelWidth / 4) + 10 - (panelHeight / 12), (panelHeight / 6), panelHeight / 6, panelHeight / 6); // Head
         }
-        
+
         g.setColor(Color.GREEN);
-        
+
         if (incorrectCount > 1) {
             g.drawOval((panelWidth / 4) - 5, ((panelHeight / 6) * 2) + 5, (panelWidth / 18), (panelHeight / 4)); //Torso
         }
-        
+
         g.setColor(Color.RED);
-        
+
         if (incorrectCount > 2) {
             g.drawLine((panelWidth / 4), ((panelHeight / 6) * 2) + (panelHeight / 18), ((panelWidth / 4) + 10) - (panelHeight / 6),
                     (((panelHeight / 6) * 2) + (panelHeight / 18)) - (panelHeight / 12)); // Left Arm
@@ -75,9 +75,9 @@ public class HangmanColoridoPanel extends HangmanPanel {
             g.drawLine((panelWidth / 4) + 25, ((panelHeight / 6) * 2) + (panelHeight / 18), ((panelWidth / 4) + 10) + (panelHeight / 6),
                     (((panelHeight / 6) * 2) + (panelHeight / 18)) - (panelHeight / 12)); // Right Arm
         }
-        
+
         g.setColor(Color.BLUE);
-        
+
         if (incorrectCount > 4) {
             g.drawLine((panelWidth / 4) + 25, (panelHeight / 6) * 3 + 20, ((panelWidth / 4) + 10) + (panelHeight / 6),
                     (((panelHeight / 6) * 3) + (panelHeight / 18)) + (panelHeight / 12)); // Left Leg

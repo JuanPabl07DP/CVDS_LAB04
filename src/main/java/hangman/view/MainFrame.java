@@ -23,7 +23,7 @@ public class MainFrame extends JFrame{
         container = new JPanel(new CardLayout());
         this.add(container);
     }
-    
+
     public void addPanel(JPanel panel,String key){
         container.add(panel,key);
     }
@@ -35,6 +35,6 @@ public class MainFrame extends JFrame{
     public void setContainer(JPanel container) {
         this.container = container;
     }
-    
-    
+
+
 }

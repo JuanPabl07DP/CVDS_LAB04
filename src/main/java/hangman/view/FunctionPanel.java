@@ -1,14 +1,14 @@
 /***************************************************************
-* file: FunctionPanel.java
-* author: Omar Rodriguez
-* class: CS 245 - Programming Graphical User Interfaces
-*
-* assignment: Swing Project v1.0
-* date last modified: 10/11/2016
-*
-* purpose: This is the view for an application's splash screen
-*
-****************************************************************/
+ * file: FunctionPanel.java
+ * author: Omar Rodriguez
+ * class: CS 245 - Programming Graphical User Interfaces
+ *
+ * assignment: Swing Project v1.0
+ * date last modified: 10/11/2016
+ *
+ * purpose: This is the view for an application's splash screen
+ *
+ ****************************************************************/
 package hangman.view;
 
 import com.google.inject.Inject;
@@ -30,23 +30,23 @@ public class FunctionPanel extends JPanel{
     private JButton playButton;
     private JButton highScoresButton;
     private JButton creditsButton;
-    
-    
+
+
     @Inject
     private Language lan;
-    
+
     private ImageIcon small;
     private ImageIcon medium;
     private ImageIcon large;
     private int currentSize; //1 for large, 2 for medium, 3 for small
-    
+
     private JLabel imageLabel;
     private static final Font BUTTON_FONT = new Font("Impact", Font.PLAIN, 32);
     private static final Border BUTTON_BORDER = BorderFactory.
             createCompoundBorder(BorderFactory.createEmptyBorder(5,5,5,5),
                     BorderFactory.createBevelBorder(BevelBorder.RAISED,Color.WHITE,Color.GRAY));
-    
-    
+
+
     public FunctionPanel(Language lan) {
         this.lan=lan;
         try{
@@ -58,14 +58,14 @@ public class FunctionPanel extends JPanel{
         }
         initComponents();
     }
-    
-   
-              
+
+
+
     //method: initComponents
     //purpose: create/initialize view components of a function screeen
     private void initComponents() {
         setBackground(Color.BLACK);
-        
+
         setLayout(new GridBagLayout());
         GridBagConstraints gridConstraints = new GridBagConstraints();
         gridConstraints.fill = GridBagConstraints.BOTH;
@@ -76,7 +76,7 @@ public class FunctionPanel extends JPanel{
         gridConstraints.weightx = .66;
         gridConstraints.weighty = 1;
         this.add(imageLabel, gridConstraints);
-        
+
         JPanel placeholderPanel = new JPanel();
         placeholderPanel.setBackground(Color.BLACK);
         gridConstraints.fill = GridBagConstraints.BOTH;
@@ -87,8 +87,8 @@ public class FunctionPanel extends JPanel{
         gridConstraints.weightx = .33;
         gridConstraints.weighty = .66;
         this.add(placeholderPanel, gridConstraints);
-        
-        
+
+
         playButton = new JButton(lan.getFunctionControllerNames()[0]);
         playButton.setBackground(Color.BLACK);
         playButton.setForeground(Color.WHITE);
@@ -119,7 +119,7 @@ public class FunctionPanel extends JPanel{
         gridConstraints.weighty = .33;
         this.add(buttonPanel, gridConstraints);
     }
-    
+
     //method: channgeImageSize
     //purpose: set function panel image
     public void changeImageSize(int size){
@@ -136,7 +136,7 @@ public class FunctionPanel extends JPanel{
             }
         }
     }
-    
+
     //method getPlayButton
     //purpose: return a reference to this view's first button
     public JButton getPlayButton() {
@@ -148,7 +148,7 @@ public class FunctionPanel extends JPanel{
     public JButton getHighScoresButton() {
         return highScoresButton;
     }
-    
+
     //method getCreditsButton
     //purpose: return a reference to this view's third button
     public JButton getCreditsButton() {
