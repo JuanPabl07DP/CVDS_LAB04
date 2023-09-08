@@ -3,8 +3,8 @@ package hangman.model;
 public class BonusScore implements GameScore {
 
     /**
-     * @pre
-     * @pos
+     * @pre Inicia con 0 puntos y con un puntaje minimo 0
+     * @pos Se bonifica con 5^i. Se penaliza con -8 puntos cada letra incorrecta
      * @param CorrectCount numero de letras correctas
      * @param IncorrectCount numero de letras incorrectas
      * @return Score,  si el score supera 500 puntos, el jugador obtiene como puntaje final 500.

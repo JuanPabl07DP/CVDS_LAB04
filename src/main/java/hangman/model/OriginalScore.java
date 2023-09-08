@@ -2,8 +2,8 @@ package hangman.model;
 
 public class OriginalScore implements GameScore {
     /**
-     * @pre
-     * @pos
+     * @pre Se inicia con 100 puntos Y con un puntaje minimo 0
+     * @pos Se penaliza con 10 puntos por cada letra incorrecta
      * @param CorrectCount
      * @param IncorrectCount
      * @return score
