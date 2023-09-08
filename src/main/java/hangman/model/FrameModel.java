@@ -17,7 +17,7 @@ abstract public class FrameModel {
     public int windowHeight;
     public JComponent positionReference;
     public int actionOnClose;
-    
+
     public String getTitle() {
         return title;
     }

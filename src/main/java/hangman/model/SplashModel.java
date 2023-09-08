@@ -1,15 +1,15 @@
 /***************************************************************
-* file: SplashModel.java
-* author: Omar Rodriguez
-* class: CS 245 - Programming Graphical User Interfaces
-*
-* assignment: Swing Project v1.0
-* date last modified: 10/11/2016
-*
-* purpose: This is the model that contains the business logic for the
-* splash screen
-*
-****************************************************************/ 
+ * file: SplashModel.java
+ * author: Omar Rodriguez
+ * class: CS 245 - Programming Graphical User Interfaces
+ *
+ * assignment: Swing Project v1.0
+ * date last modified: 10/11/2016
+ *
+ * purpose: This is the model that contains the business logic for the
+ * splash screen
+ *
+ ****************************************************************/
 package hangman.model;
 
 import java.awt.Color;
@@ -23,14 +23,14 @@ public class SplashModel {
     private String teamName;
     private Color backgroundColor;
     private int splashTime;
-    
+
     public SplashModel(){
         splashTitle = "PLACEHOLDER";
         teamName = "PLACEHOLDER";
         backgroundColor = Color.BLACK;
         splashTime = 3000;
     }
-    
+
     public SplashModel(String title, String team, Color color, int time){
         splashTitle = title;
         teamName = team;
@@ -55,7 +55,7 @@ public class SplashModel {
     public String getTeamName() {
         return teamName;
     }
-    
+
     //method: setTeamName
     //purpose: set value for bottom header
     public void setTeamName(String teamName) {
