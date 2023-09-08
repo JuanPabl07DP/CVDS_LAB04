@@ -8,14 +8,14 @@ public class GameScoreTest {
         GameScore game;
         try {
             game = new OriginalScore();
-            game.CalculateScore(-2, -3);
+            game.CalculateScore(-1, -3);
             Assert.assertTrue(false);
         } catch (GameScoreException e) {
             Assert.assertTrue(true);
         }
         try {
             game = new PowerBonusScore();
-            game.CalculateScore(-2, -3);
+            game.CalculateScore(-1, -3);
             Assert.assertTrue(false);
         } catch (GameScoreException e) {
             Assert.assertTrue(true);
@@ -23,7 +23,7 @@ public class GameScoreTest {
 
         try {
             game = new BonusScore();
-            game.CalculateScore(-2, -3);
+            game.CalculateScore(-1, -3);
             Assert.assertTrue(false);
         } catch (GameScoreException e) {
             Assert.assertTrue(true);
@@ -41,13 +41,13 @@ public class GameScoreTest {
     @Test
     public void validOriginScorePenalty() throws GameScoreException {
         GameScore game = new OriginalScore();
-        int score = game.CalculateScore(2,5);
+        int score = game.CalculateScore(3,5);
         Assert.assertTrue(score == 50);
     }
     @Test
     public void validOriginScoreMinScore() throws GameScoreException {
         GameScore game = new OriginalScore();
-        int score = game.CalculateScore(2,11);
+        int score = game.CalculateScore(8,11);
         Assert.assertTrue(score == 0);
     }
 
