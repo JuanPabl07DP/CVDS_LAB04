@@ -1,16 +1,16 @@
 /*************************************************************** 
-*file: GameOverController.java 
-* author: Jazmin Guerrero, Omar Rodriguez, Marc Deaso 
-* class: CS 245 - Programming Graphical User Interfaces
-* 
-* 
-*assignment: Swing Project 1 
-* date last modified: 10/06/2016
-* 
-* purpose: This class is the controller between the gameover view
-* and gameover model
-* 
-****************************************************************/ 
+ *file: GameOverController.java
+ * author: Jazmin Guerrero, Omar Rodriguez, Marc Deaso
+ * class: CS 245 - Programming Graphical User Interfaces
+ *
+ *
+ *assignment: Swing Project 1
+ * date last modified: 10/06/2016
+ *
+ * purpose: This class is the controller between the gameover view
+ * and gameover model
+ *
+ ****************************************************************/
 package hangman.controller;
 
 import com.google.inject.Inject;
@@ -30,8 +30,8 @@ public class GameOverController {
     private GameOverPanel panel;
     private GameOverModel model;
     private MainFrameController rootController;
-    
-    
+
+
     private Language lan;
 
     public GameOverController(GameOverPanel panel, GameOverModel model, MainFrameController rootController,Language lan) {
@@ -41,8 +41,8 @@ public class GameOverController {
         this.rootController = rootController;
         this.setup();
     }
-    
-   
+
+
 
     // method: setup
     // purpose: Connects information stored in model to the view
@@ -52,7 +52,7 @@ public class GameOverController {
         panel.getMenuButton().setText(model.getMenuButtonText());
         panel.getResetButton().setText(model.getNewGameButtonText());
         panel.getScoreLabel().setText(lan.getFinalScorelabel() + String.valueOf(model.getScore()));
-        
+
         panel.getMenuButton().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -60,7 +60,7 @@ public class GameOverController {
                 rootController.changeVisibleCard(GUI.FUNCTION_KEY);
             }
         });
-        
+
         panel.getResetButton().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
@@ -68,7 +68,7 @@ public class GameOverController {
                 rootController.changeVisibleCard(GUI.GAME_KEY);
             }
         });
-        
+
         panel.addAncestorListener(new AncestorListener(){
             @Override
             public void ancestorAdded(AncestorEvent event) {
@@ -82,22 +82,22 @@ public class GameOverController {
             @Override
             public void ancestorMoved(AncestorEvent event) {
             }
-            
+
         });
     }
-    
+
     public GameOverPanel getPanel() {
         return this.panel;
     }
-    
+
     public void setPanel(GameOverPanel panel) {
         this.panel = panel;
     }
-    
+
     public GameOverModel getModel() {
         return this.model;
     }
-    
+
     public void setModel(GameOverModel model) {
         this.model = model;
     }
@@ -105,5 +105,5 @@ public class GameOverController {
     public void setGameControllerReference(GameController gameControllerReference) {
         this.gameControllerReference = gameControllerReference;
     }
-    
+
 }
